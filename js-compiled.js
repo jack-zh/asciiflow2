@@ -536,7 +536,7 @@ g.j = function() {
   for (var b = this.b, c = this.c, e = 0, d = 0, a = n(a), f = a.next();!f.done;f = a.next()) {
      f = f.value;
      if("\n" == f){
-            (c++, b = 0)
+            (d++, e = 0)
      }else{
          var reg = new RegExp("[\\u4E00-\\u9FFF]+","g");
          if(reg.test(f)){
