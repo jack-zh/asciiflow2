@@ -534,7 +534,17 @@ g.j = function() {
   var a = $("#text-tool-input").val();
   S(this.b);
   for (var b = this.b, c = this.c, e = 0, d = 0, a = n(a), f = a.next();!f.done;f = a.next()) {
-    f = f.value, "\n" == f ? (d++, e = 0) : (P(b, c.add(new p(e, d)), f), e++);
+     f = f.value;
+     if("\n" == f){
+            (c++, b = 0)
+     }else{
+         var reg = new RegExp("[\\u4E00-\\u9FFF]+","g");
+         if(reg.test(f)){
+              (P(b, c.add(new p(e, d)), f), e=e+2);
+         }else{
+              (P(b, c.add(new p(e, d)), f), e++);
+         }
+     }
   }
 };
 function Ba(a) {
